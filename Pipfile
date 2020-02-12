@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+pylint = "*"
+pytest = "*"
+deftools = {editable = true,path = "."}
+
+[packages]
+numpy = "*"
+pandas = "*"
+opencv-python = "<=4.1.2.30"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
