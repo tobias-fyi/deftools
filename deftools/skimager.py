@@ -61,8 +61,15 @@ def skimager(src_dir: str, dst_dir: str, exts: list = [".png", ".jpg", "jpeg"]):
             # Load image
             img = cv2.imread(file, cv2.IMREAD_UNCHANGED)
 
+            # Image name
+            window = f"{os.path.split(src_dir)[-1]} - {file}"
+
+            # Create and resize window
+            cv2.namedWindow(window, cv2.WINDOW_NORMAL)
+            cv2.resizeWindow(window, (600, 600))
+
             # Show image
-            cv2.imshow(f"{os.path.split(src_dir)[-1]} - {file}", img)
+            cv2.imshow(window, img)
 
             # Wait for and take action based on keystroke
             # "0" means wait indefinitely
